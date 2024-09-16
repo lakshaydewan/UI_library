@@ -2,6 +2,8 @@ import Image from "next/image"
 import TransitionEl  from "./components/TransitionEl"
 import Staggered from "./components/Staggered"
 import NiceBorder from "./components/NiceBorder"
+import Blob from "./components/Blob"
+import HackerHaiBhai from "./components/HackerHaiBhai"
 
 export default function Home() {
   return (
@@ -38,6 +40,8 @@ export default function Home() {
     <TransitionEl />
     <Staggered />
     <NiceBorder />
+    <Blob />
+    <HackerHaiBhai />
   </div>
   )
 }

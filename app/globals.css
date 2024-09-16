@@ -25,3 +25,31 @@ body {
     text-wrap: balance;
   }
 }
+.custom-spin {
+  animation: spin 10s linear infinite;
+  transform-origin: center;
+  translate: -50% -50%;
+  top: 50%;
+  left: 50%; 
+}
+
+.custom-blur {
+  backdrop-filter: blur(200px);
+  z-index: 10;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-font {
+  font-family: "Space Mono", monospace;
+  font-size: 5rem;
+}
