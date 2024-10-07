@@ -7,7 +7,7 @@ import { mediaItems } from '@/data/data'
 
 const Page = () => {
 
-    const [img, setImage] = useState(mediaItems[0])
+    const [img, setImage] = useState(mediaItems[2])
     const controlsforImage = useAnimationControls();
     const controlsforTitle = useAnimationControls();
     const controlsforText = useAnimationControls();
@@ -18,6 +18,7 @@ const Page = () => {
 
         controlsforText.set({ opacity: 0, y: 10 })
         controlsforText.start({ opacity: 1, y: 0 })
+        
 
         controlsforTitle.set({ y: 35 })
         controlsforTitle.start({ y: 0 })
@@ -32,7 +33,7 @@ const Page = () => {
     }, [img])
 
     return (
-        <div className='h-screen w-screen bg-black m-0 p-0 relative'>
+        <div className='h-screen w-screen bg-black m-0 p-0 relative font-sans'>
             <motion.div
             animate={controlsForBg}
             transition={{duration:0.2}}
@@ -50,15 +51,15 @@ const Page = () => {
                     <div className='h-screen w-[35vw] flex justify-between overflow-hidden'>
                         <div className='flex flex-col justify-between items-start ml-3 my-3'>
                             <div className='flex justify-start gap-2 items-center font-semibold text-white'>
-                                <div className='hover:text-gray-300 cursor-pointer duration-700 transition-all ease-out'>Home</div>
-                                <div className='hover:text-gray-300 cursor-pointer duration-700 transition-all ease-out'>Work</div>
-                                <div className='hover:text-gray-300 cursor-pointer duration-700 transition-all ease-out'>Contact</div>
+                                <div className='hover:text-gray-400 cursor-pointer duration-700 transition-all ease-out'>Home</div>
+                                <div className='hover:text-gray-400 cursor-pointer duration-700 transition-all ease-out'>Work</div>
+                                <div className='hover:text-gray-400 cursor-pointer duration-700 transition-all ease-out'>Contact</div>
                             </div>
                             <div className='font-bold text-4xl overflow-hidden'>
                                 <motion.div
                                     initial={{y:35}}
                                     animate={{y: 0}}
-                                    transition={{ duration: 0.6, delay: 0, ease: easeOut }}
+                                    transition={{ duration: 0.7, delay: 0.5 }}
                                 >
                                     WE GO AGAIN
                                 </motion.div>
@@ -67,7 +68,7 @@ const Page = () => {
                                 <motion.div
                                 initial={{y:100}}
                                 animate={{y: 0}}
-                                transition={{duration: 0.6, delay:0.1, ease: easeOut}}
+                                transition={{duration: 0.6, delay:0.6}}
                                 >
                                     A creative production studio founded by a former Olympian & an award-winning director. We know sport.
                                 </motion.div>
@@ -93,7 +94,7 @@ const Page = () => {
                             <motion.div
                                 animate={controlsforText}
                                 transition={{ duration: 1, delay: 0.8 }}
-                                className='mr-24 text-white'>
+                                className='md:mr-24 text-white mr-0'>
                                 <p className='text-start font-bold'>
                                     {img.description}
                                 </p>
