@@ -31,7 +31,7 @@ const Page = () => {
 
   return (
     <div>
-      <div className='overflow-clip relative h-[800vh] w-screen bg-black' ref={TargetRef}>
+      <div className='overflow-clip relative h-[500vh] w-screen bg-black' ref={TargetRef}>
         <div className='overflow-clip h-[100vh] w-screen fixed top-0 left-0 flex justify-center items-center'>
           <motion.div
             className='overflow-clip'
@@ -40,20 +40,21 @@ const Page = () => {
               scale,
             }}
           >
-            <h1 className='pl-[15px] text-7xl font-sans font-normal text-white'>
+            <h1 className='pl-[15px] text-7xl font-new font-normal text-white'>
               INSPIRE
             </h1>
           </motion.div>
         </div>
-        <div className='absolute bottom-0 left-0 h-screen w-screen bg-white text-black flex justify-center items-center'>
+        <motion.div
+        onViewportEnter={() => {
+          console.log("ran!!!")
+          setInView(true)
+        }}
+        onViewportLeave={() => {
+          setInView(false)
+        }}
+        className='absolute bottom-0 left-0 h-screen w-screen bg-white text-black flex justify-center items-center'>
           <motion.div
-            onViewportEnter={() => {
-              console.log("ran!!!")
-              setInView(true)
-            }}
-            onViewportLeave={() => {
-              setInView(false)
-            }}
             viewport={{ once: false, amount: 1 }}
             className='relative overflow-hidden w-fit'>
             <motion.h1
@@ -72,7 +73,7 @@ const Page = () => {
               THIS IS REALLY COMMON THOUGH!
             </motion.p>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div >
   )
