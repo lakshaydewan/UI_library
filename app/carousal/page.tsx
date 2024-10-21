@@ -7,7 +7,7 @@ import { mediaItems } from '@/data/data'
 
 const Page = () => {
 
-    const [img, setImage] = useState(mediaItems[2])
+    const [img, setImage] = useState(mediaItems[4])
     const controlsforImage = useAnimationControls();
     const controlsforTitle = useAnimationControls();
     const controlsforText = useAnimationControls();
@@ -120,7 +120,7 @@ const Page = () => {
                         </div>
                         <motion.div
                             animate={controlsforImage}
-                            transition={{ duration: 1, }}
+                            transition={{ duration: 0.6, delay: 0.3}}
                             className='w-full h-full my-4 overflow-hidden'>
                             <Image
                                 className='w-full h-full object-cover'

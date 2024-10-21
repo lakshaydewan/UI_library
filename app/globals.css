@@ -60,3 +60,37 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 5rem;
 }
+
+
+.card-container {
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.175, 0.9, 0.72, 1.2);
+}
+
+.card-container:hover .card {
+  transform: rotateX(-360deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.card-front {
+  background-color: #1b1c1f;
+}
+
+.card-back {
+  background-color: #cff701;
+  transform: rotateX(180deg);
+}
