@@ -7,6 +7,7 @@ import HackerHaiBhai from "./components/HackerHaiBhai";
 import New_Button from "./components/New_Button";
 import Scale_Card from "./components/Scale_Card";
 import Button from "./components/Button";
+import CoolButton from "./test/page";
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
       </div>
       <div className="h-screen snap-start">
         <Button />
+      </div>
+      <div className="h-screen snap-start">
+        <CoolButton />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const page = () => {
+const CoolButton = () => {
     return (
         <div className='h-screen bg-[#080618] w-screen flex justify-center items-center'>
             <div className='group overflow-hidden rounded-md bg-[#112645] relative w-24 h-10 flex justify-center items-center cursor-pointer'>
@@ -36,4 +36,4 @@ const page = () => {
     )
 }
 
-export default page
+export default CoolButton

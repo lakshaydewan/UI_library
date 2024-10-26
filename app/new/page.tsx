@@ -1,14 +1,18 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const NewPage = () => {
+  const [height, setHeight] = useState<number>(0);
 
-  const height = window.innerHeight;
-  //[url(/assets/imageHD.jpg)]
-
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const height = window.innerHeight;
+      setHeight(height);
+    }
+  }, []);
+  
   return (
     <div className='w-screen h-screen overflow-hidden'>
       
@@ -76,7 +80,7 @@ const NewPage = () => {
                 animate={{translateY: 0}}
                 transition={{duration: 1, delay: 1.8}}
                 className='bg-white w-full h-full overflow-hidden'>
-                  <img src="/assets/img4.jpg" alt="nothing" className='w-full h-full object-cover object-center'/>
+                  <Image src="/assets/img4.jpg" alt="nothing" className='w-full h-full object-cover object-center'/>
                 </motion.div>
                 <motion.div
                 initial={{translateY: height}}
