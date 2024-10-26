@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const NewPage = () => {
-  
-  const height = 900
+
+  const height = 1000
 
   return (
     <div className='w-screen h-screen overflow-hidden'>
-      
       <motion.div
       initial={{zIndex: 0, opacity: 0}}
       animate={{zIndex: 30, opacity: 1}}
