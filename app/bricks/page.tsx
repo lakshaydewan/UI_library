@@ -1,7 +1,6 @@
 'use client'
 import { motion, useAnimationControls, useScroll } from 'framer-motion'
-import { div } from 'framer-motion/client';
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 
 const arr = [
   { id: 1, delay: 0.1 },
@@ -43,18 +42,11 @@ const arr = [
 ];
 
 
-const page = () => {
+const Page = () => {
 
   const controlsForFlipper = useAnimationControls();
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
   const [isFlipped, setIsFlipped] = useState(false)
 
-  useEffect(()=> {
-
-  }, [])
 
   const handleClick = () => {
     setIsFlipped((prev: any) => !prev);
@@ -62,7 +54,7 @@ const page = () => {
   };
 
   return (
-   <div className='h-[200vh] w-screen' ref={ref}>
+   <div className='h-[100vh] w-screen'>
      <div className={`w-screen h-screen sticky top-0 left-0 grid grid-cols-6 grid-rows-6 gap-[2px]`}>
         {
             arr.map((item) => (
@@ -90,4 +82,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page;

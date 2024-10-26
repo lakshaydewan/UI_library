@@ -3,25 +3,25 @@ import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
-const page = () => {
+const Page = () => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
         target: ref
     })
-    const centeredStyle = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)'
-    };
+    // const centeredStyle = {
+    //     position: 'absolute',
+    //     top: '50%',
+    //     left: '50%',
+    //     transform: 'translate(-50%, -50%)'
+    // };
     const scale = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [1, 0.7, 0.7, 0.7, 0.7, 0.7])
     const opacity = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [1, 0, 0, 0, 0, 0])
 
     const scale2 = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [0, 1, 0.7, 0.7, 0.7, 0.7])
     const opacity2 = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [1, 1, 0, 0, 0, 0])
 
-    const scale3 = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [1, 0.7, 0.7, 0.7, 0.7, 0.7])
-    const opacity3 = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [1, 0, 0, 0, 0, 0])
+    // const scale3 = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [1, 0.7, 0.7, 0.7, 0.7, 0.7])
+    // const opacity3 = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [1, 0, 0, 0, 0, 0])
 
     return (
         <div className='w-screen h-[700vh] bg-white' ref={ref}>
@@ -57,4 +57,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page;

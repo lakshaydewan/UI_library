@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import { easeIn, easeInOut, easeOut, motion, useAnimationControls } from "framer-motion"
+import { easeOut, motion, useAnimationControls } from "framer-motion"
 import { mediaItems } from '@/data/data'
 
 
@@ -26,8 +26,7 @@ const Page = () => {
         controlsforImage.set({ scale: 0 });
         controlsforImage.start({ scale: 1 });
     }
-
-
+    
     useEffect(() => {
         handleClick()
     }, [img])

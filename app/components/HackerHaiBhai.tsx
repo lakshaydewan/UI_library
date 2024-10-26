@@ -47,7 +47,7 @@ const HackerHaiBhai = () => {
             word.removeEventListener('mouseover', handleMouseOver);
           };
         }
-      }, []);
+      });
   return (
     <div className='h-screen w-screen bg-black flex justify-center items-center'>
         <div>

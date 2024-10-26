@@ -23,7 +23,7 @@ const Counter = () => {
 
     useEffect(() => {
         handleAnimation()
-    }, [])
+    })
 
     return (
         <div className='w-screen h-screen flex justify-center items-center p-0 m-0 box-border'>
