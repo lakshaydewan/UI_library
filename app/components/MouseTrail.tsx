@@ -1,14 +1,9 @@
 'use client'
 import { useState, useLayoutEffect } from "react";
 import { motion } from 'framer-motion';
-import Image from "next/image";
-import { div } from "framer-motion/client";
+import type { CursorProps } from "@/data/data";
 
-type CursorProps = {
-    size: boolean;
-}
-
-function MouseTrail(props: CursorProps) {
+function MouseTrail(props : {size : Boolean}) {
     const [pos, setPos] = useState({ x: 0, y: 0 });
     const arr = new Array(10).fill(0); // Array of 10 elements
     const offset = props.size ? 14 : 8
@@ -45,3 +40,4 @@ function MouseTrail(props: CursorProps) {
 }
 
 export default MouseTrail;
+

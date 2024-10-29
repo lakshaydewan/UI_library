@@ -1,7 +1,7 @@
 'use client'
 import { motion, useAnimationControls, useScroll } from 'framer-motion'
 import React, { useState, useRef } from 'react'
-import MouseTrail from '../cursor/page';
+import MouseTrail from '../components/MouseTrail';
 
 const arr = [
   { id: 1, delay: 0.1 },

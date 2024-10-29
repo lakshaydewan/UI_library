@@ -72,4 +72,7 @@ export const mediaItems = [
       description: '"Breaking Barriers" follows the inspiring journey of a group of athletes as they overcome challenges to achieve their dreams. Through hard work, determination, and resilience, they prove that with passion and teamwork, anything is possible.',
     },
   ];
-  
+
+export interface CursorProps {
+    size: boolean
+};
