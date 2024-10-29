@@ -1,6 +1,7 @@
 'use client'
 import { motion, useAnimationControls, useScroll } from 'framer-motion'
 import React, { useState, useRef } from 'react'
+import MouseTrail from '../cursor/page';
 
 const arr = [
   { id: 1, delay: 0.1 },
@@ -45,40 +46,49 @@ const arr = [
 const Page = () => {
 
   const controlsForFlipper = useAnimationControls();
+  const controlsForBackDiv = useAnimationControls();
   const [isFlipped, setIsFlipped] = useState(false)
+  const [size, setSize] = useState(false)
 
 
   const handleClick = () => {
     setIsFlipped((prev: any) => !prev);
     controlsForFlipper.start({ rotateX: isFlipped ? 0 : 180 });
+    controlsForBackDiv.start({ zIndex: 10, opacity: [1, 0, 0.5, 0, 0.6, 0, 0.8, 0, 0.9, 0, 0, 0, 1, 0, 1, 1, 1] })
   };
 
   return (
-   <div className='h-[100vh] w-screen'>
-     <div className={`w-screen h-screen sticky top-0 left-0 grid grid-cols-6 grid-rows-6 gap-[2px]`}>
+    <div className='h-[100vh] w-screen overflow-hidden cursor-none'>
+      <MouseTrail size={size} />
+      <motion.div animate={controlsForBackDiv} transition={{ delay: 2, duration: 1 }} className='h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-0'><h1 className='z-[0] text-[white] md:text-[130px] lg:text-[180px] text-7xl font-extrabold gloria-hallelujah-regular'>ONITSUKA</h1></motion.div>
+      <div className={`w-screen h-screen sticky top-0 left-0 grid grid-cols-6 grid-rows-6 ${isFlipped ? "gap-0" : "gap-[5px]"} transition-all duration-1000 ease-out`}>
         {
-            arr.map((item) => (
-                <motion.div
-                className='row-span-1 col-span-1 card-container relative overflow-hidden' key={item.id}>
-                    <motion.div
-                      animate={controlsForFlipper}
-                      transition={{duration: 1, delay: item.delay}}
-                    className='card w-full h-full rounded-md'>
-                        <div className='card-front w-full h-full rounded-md'>
-                        </div>
-                        <div className='card-back w-full h-full'>
-                        </div>
-                    </motion.div>
-                </motion.div>
-            ))
+          arr.map((item) => (
+            <motion.div
+              onMouseOver={() => {
+                setSize(true)
+              }}
+              onMouseLeave={() => {
+                setSize(false)
+              }}
+              className='row-span-1 col-span-1 card-container relative overflow-hidden' key={item.id}>
+              <motion.div
+                animate={controlsForFlipper}
+                transition={{ duration: 1, delay: item.delay }}
+                className='card w-full h-full rounded-md'>
+                <div onClick={() => {
+                  handleClick();
+                }} className='card-front w-full h-full rounded-md text-md gloria-hallelujah-regular flex justify-center items-center'>
+                  <div className='mix-blend-difference z-[1000] text-[#1b1c1f]'>GET STARTED</div>
+                </div>
+                <div className='card-back w-full h-full'>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))
         }
-        <div className='bg-white absolute top-3 right-6 text-black rounded px-2' onClick={()=> {
-          handleClick();
-        }}>
-          MENU
-        </div>
+      </div>
     </div>
-   </div>
   )
 }
 
