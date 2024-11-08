@@ -4,7 +4,7 @@ interface ButtonProps {
     title: string;
     type?: 'submit';
     onClick?: () => void;
-    variant?: 'default' | 'disabled'
+    variant?: 'default' | 'disabled' //Add more variants as you like
 }
 
 const CustomButton = ({title, type, onClick, variant}: ButtonProps) => {

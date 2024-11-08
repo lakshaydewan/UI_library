@@ -86,7 +86,7 @@ const LoginForm = ({ type }: LoginFormProps) => {
                 {
                     error !== "" && <p className='w-full text-start text-sm text-red-500 my-[-12px]'>{error}</p>
                 }
-                <CustomButton onClick={handleClick} title='SIGN UP' type='submit' />
+                <CustomButton onClick={handleClick} title={type === 'SignUp' ? "SIGN UP" : "SIGN IN"} type='submit' />
                 <div className='w-full'>
                     <p className='w-full text-sm flex justify-center items-center'>{type === 'SignUp' ? "Already Have an account ? " : "Don't have an account ?"}<span className='text-green-300 ml-1 cursor-pointer'>{type === 'SignUp' ? "log in" : "sign up"}</span></p>
                 </div>
