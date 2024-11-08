@@ -1,6 +1,6 @@
 'use client'
-import { motion, useAnimationControls, useScroll } from 'framer-motion'
-import React, { useState, useRef } from 'react'
+import { motion, useAnimationControls } from 'framer-motion'
+import React, { useState } from 'react'
 import MouseTrail from '../components/MouseTrail';
 
 const arr = [

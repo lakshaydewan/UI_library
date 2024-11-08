@@ -9,6 +9,10 @@
   --foreground: #171717;
 }
 
+.custom-shadow {
+  box-shadow: 0 0 15px white;
+}
+
 .gloria-hallelujah-regular {
   font-family: "Gloria Hallelujah", cursive;
   font-weight: 400;
